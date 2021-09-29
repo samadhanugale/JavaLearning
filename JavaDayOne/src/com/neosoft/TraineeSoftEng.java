@@ -19,7 +19,16 @@ public class TraineeSoftEng { //User defined classs
 	email = "NA";
 	
 	}
-	
+	//Parameterized Constructor
+	public TraineeSoftEng(String name, String qualification, int age, String city, String email) {
+		super();
+		this.name = name; //"This" used  to refer current instance
+		this.qualification = qualification;
+		this.age = age;
+		this.city = city;
+		this.email = email;
+	}
+
 	public final static String company_name = "NEOSOFT"; //final : Cannot be modified further
 	
 	public void showDetails() { //our own method (instance Behaviour)

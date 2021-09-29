@@ -22,6 +22,17 @@ public class TraineeMainApp {
 	candidate2.qualification = "BE";
 //	candidate2.email = "rutik@gmail.com";
 	candidate2.showDetails();
-	System.out.println("Company : "+candidate2.company_name);
+	System.out.println("Company : "+TraineeSoftEng.company_name);
+	
+	System.out.println("------------------------------------------");
+	
+	TraineeSoftEng candidate3 = new TraineeSoftEng("Sagar","BSC",23,"DELHI","Sagar@gmail.com");
+	candidate3.showDetails();
+	System.out.println("Company : "+candidate3.company_name);
+	
+	TraineeSoftEng candidate4 = new TraineeSoftEng("Ajay","BTECH",23,"NASHIK","ajay@gmail.com");
+	candidate4.showDetails();
+	System.out.println("Company : "+candidate4.company_name);
+	
 	}
 }
