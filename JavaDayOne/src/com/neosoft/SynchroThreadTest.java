@@ -1,6 +1,6 @@
 package com.neosoft;
 
-public class SynchroThreadTest extends Thread{
+public class SynchroThreadTest extends Thread {
 	@Override
 	public void run() {
 		System.out.println("Thread Name: " + this.getName());
@@ -16,19 +16,19 @@ public class SynchroThreadTest extends Thread{
 //		thread.start();
 
 		Printer printer = new Printer();
-		
+
 		new PC1(printer).start();
 		new PC2(printer).start();
 	}
 }
 
 class Printer {
-	//synchronized 
+	// synchronized
 	void doPrint(String doc) {
 
 		System.out.println("Non synch area....");
 
-		synchronized(this){
+		synchronized (this) {
 
 			for (int i = 1; i <= 10; i++) {
 				System.out.println("Printing " + doc + ":" + i);
@@ -45,13 +45,13 @@ class Printer {
 }
 
 class PC1 extends Thread {
-	
+
 	Printer p;
-	
+
 	public PC1(Printer p) {
-		this.p=p;
+		this.p = p;
 	}
-	
+
 	@Override
 	public void run() {
 		p.doPrint("Java");
@@ -59,13 +59,13 @@ class PC1 extends Thread {
 }
 
 class PC2 extends Thread {
-	
+
 	Printer p;
-	
+
 	public PC2(Printer p) {
-		this.p=p;
+		this.p = p;
 	}
-	
+
 	@Override
 	public void run() {
 		p.doPrint("Python");
