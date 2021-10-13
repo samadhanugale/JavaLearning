@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 
-public class ConsoleBasedProject {
+public class S20_BankApplicationConsole {
 	static String name;
 	static String add;
 	static String cno;
@@ -15,7 +15,7 @@ public class ConsoleBasedProject {
 	static int amt;
 	static String type;
 
-	public ConsoleBasedProject(String name, String add, String cno, String uname, String pwd, int dep, String type) {
+	public S20_BankApplicationConsole(String name, String add, String cno, String uname, String pwd, int dep, String type) {
 		super();
 		this.name = name;
 		this.add = add;
@@ -26,7 +26,7 @@ public class ConsoleBasedProject {
 		this.type = type;
 	}
 
-	public ConsoleBasedProject(int amt) {
+	public S20_BankApplicationConsole(int amt) {
 		this.amt = amt;
 	}
 
@@ -95,10 +95,10 @@ public class ConsoleBasedProject {
 			System.out.print("Enter Initial Deposit :");
 			int dep = sc.nextInt();
 
-			ConsoleBasedProject b1 = new ConsoleBasedProject(name, add, cno, uname, pwd, dep,type);
+			S20_BankApplicationConsole b1 = new S20_BankApplicationConsole(name, add, cno, uname, pwd, dep,type);
 			main1();
 
-			ConsoleBasedProject[] bankRecords = { b1 };
+			S20_BankApplicationConsole[] bankRecords = { b1 };
 		}
 		String UnameCopy = uname;
 		if (choice == 2) {
@@ -119,7 +119,7 @@ public class ConsoleBasedProject {
 				pwd1 = sc.next();
 			}
 			System.out.println("Login Successfully");
-			ConsoleBasedProject.main2();
+			S20_BankApplicationConsole.main2();
 
 			/*
 			 * if((pwd1.equals(pwd))||pwd1.equals("\\d\\w[a-z]\\[!@#$%^&*_]")) {
@@ -161,19 +161,19 @@ public class ConsoleBasedProject {
 			int tempAmt = sc.nextInt();
 			amt += tempAmt;
 			System.out.println(amt);
-			ConsoleBasedProject.main2();
+			S20_BankApplicationConsole.main2();
 		}
 		if (choice1 == 4) {
 			System.out.println("Accountholder Name :" + name);
 			System.out.println("Accountholer Address :" + add);
 			System.out.println("Accountholder Contact :" + cno);
 			System.out.println("Account Type : " + type);
-			ConsoleBasedProject.main2();
+			S20_BankApplicationConsole.main2();
 		}
 		if (choice1 == 3) {
 			System.out.println("Rs. " + amt + " credited to your account. Balance Rs. " + amt + " as on " + new Date().getDate());
 			System.out.println("Initial Deposit - Rs " + amt + " as on " + new Date().getDate() );
-			ConsoleBasedProject.main2();
+			S20_BankApplicationConsole.main2();
 		}
 		if (choice1 == 2) {
 			System.out.println("Enter Payee Username :");
@@ -181,7 +181,7 @@ public class ConsoleBasedProject {
 			System.out.println("Enter Amount : ");
 			amt = sc.nextInt();
 			System.out.println("Username does not exist.");
-			ConsoleBasedProject.main2();
+			S20_BankApplicationConsole.main2();
 		}
 		if (choice1 == 5) {
 			main1();
@@ -191,7 +191,7 @@ public class ConsoleBasedProject {
 
 	public static void main(String[] args) {
 
-		ConsoleBasedProject.main1();
+		S20_BankApplicationConsole.main1();
 		
 		
 		
