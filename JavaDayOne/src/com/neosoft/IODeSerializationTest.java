@@ -31,7 +31,7 @@ public class IODeSerializationTest {
 			
 		}
 		catch(EOFException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			System.out.println("End of Records");
 		}
 		catch(Exception e) {
