@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class StreamTestSortingStoringImp {
 	public static void main(String[] args) {
@@ -42,6 +43,63 @@ public class StreamTestSortingStoringImp {
 				.collect(Collectors.toSet());
 				
 				System.out.println(mobilePrice);
+				
+				
+				
 		mobiles.clear();
+		
+		//Using Method Referancing
+		List<Phone> phones = new ArrayList<Phone>();
+		phones.add(new Phone(11, "Hitachi",1000));
+		phones.add(new Phone(12, "LG",1200));
+		phones.add(new Phone(13, "Nokia",1400));
+		phones.add(new Phone(14, "Karbon",1600));
+		phones.add(new Phone(15, "Toshiba",1800));
+			
+		
+		List<String> phoneNames = phones.stream()
+				.map(Phone::getName) //Fetch Names only
+				.collect(Collectors.toList()); //Function chaining
+		System.out.println(phoneNames);
+		
+		//Sort names after filtering
+		phones.stream().filter(phone ->phone.getPrice()<1300)
+			.sorted((phone1,phone2)->phone1.getName().compareTo(phone2.getName()))
+			.forEach(phone->System.out.println(phone.getName()));
+				
+		phones.clear();
 	}
+}
+
+
+class Phone{
+	private int id;
+	private String name;
+	private double price;
+	public Phone(int id, String name, double price) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.price = price;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
+	
 }

@@ -2,12 +2,13 @@ package map.function;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
 public class EmployeeKeyValue {
 	public static void main(String[] args) {
-		Map<Integer, Integer> dictionary = new HashMap<Integer, Integer>(); 
+		Map<Integer, Integer> dictionary = new LinkedHashMap<Integer, Integer>(); 
 		dictionary.put(6450, 10000);
 		dictionary.put(6451, 11000);
 		dictionary.put(6452, 14000);
@@ -16,13 +17,6 @@ public class EmployeeKeyValue {
 		dictionary.put(6455, 15000);
 		System.out.println(dictionary);
 		
-		double meaning = dictionary.get(6450);
-		if(meaning==0) {
-			System.out.println("Match not found!");
-		}
-		else {
-			System.out.println(meaning);
-		}
 		
 		Set<Integer> keys = dictionary.keySet(); //Set of keys
 		System.out.println(keys);
@@ -39,7 +33,7 @@ public class EmployeeKeyValue {
 		    System.out.println("Employee ID : "+key);
 		    System.out.println("Salary : "+value);
 		    
-		    // ...
+		   
 		}
 	}
 }
